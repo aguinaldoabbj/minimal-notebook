@@ -2,6 +2,7 @@ FROM jupyter/minimal-notebook
 
 RUN conda install --yes --freeze-installed \
     -c conda-forge \
+    conda-build \
     pandas \
     numpy \
     && conda build purge-all \
