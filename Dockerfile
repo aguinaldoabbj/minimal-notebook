@@ -5,6 +5,7 @@ RUN conda install --yes --freeze-installed \
     conda-build \
     pandas \
     numpy \
+    matplotlib \
     xlrd \
     && conda build purge-all \
     && find /opt/conda/ -type f,l -name '*.a' -delete \
