@@ -5,6 +5,7 @@ RUN conda install --yes --freeze-installed \
     conda-build \
     pandas \
     numpy \
+    missingno \
     && conda build purge-all \
     && find /opt/conda/ -type f,l -name '*.a' -delete \
     && find /opt/conda/ -type f,l -name '*.pyc' -delete \
