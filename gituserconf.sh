@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git config --global user.name $JUPYTERHUB_USER
-git config --global user.email $JUPYTERHUB_USER@example.com
+git config --system user.name $JUPYTERHUB_USER
+git config --system user.email $JUPYTERHUB_USER@example.com
