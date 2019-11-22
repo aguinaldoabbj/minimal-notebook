@@ -8,6 +8,7 @@ RUN conda install --yes --freeze-installed \
     matplotlib \
     xlrd \
     && conda build purge-all \
+    && /opt/conda/bin/conda clean -afy \
     && find /opt/conda/ -type f,l -name '*.a' -delete \
     && find /opt/conda/ -type f,l -name '*.pyc' -delete \
     && find /opt/conda/ -type f,l -name '*.js.map' -delete \
