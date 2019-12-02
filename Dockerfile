@@ -13,6 +13,8 @@ RUN conda install --yes --freeze-installed \
     && find /opt/conda/ -type f,l -name '*.pyc' -delete \
     && find /opt/conda/ -type f,l -name '*.js.map' -delete \
     && rm -rf /opt/conda/pkgs
+    
+RUN pip install pykube-ng
 
 COPY gituserconf.sh /gituserconf.sh
 
