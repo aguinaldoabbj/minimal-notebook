@@ -20,6 +20,10 @@ COPY gituserconf.sh /gituserconf.sh
 
 USER root
 
+RUN apt-get update && apt-get install -y \
+    htop \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN chmod +x /gituserconf.sh && /gituserconf.sh
 
 #adding git config script to the top of entrypoint script
