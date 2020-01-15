@@ -14,19 +14,14 @@ RUN conda install --yes --freeze-installed \
     && find /opt/conda/ -type f,l -name '*.js.map' -delete \
     && rm -rf /opt/conda/pkgs
     
-RUN pip install pykube-ng
-
 COPY gituserconf.sh /gituserconf.sh
 
 USER root
 
+RUN chmod +x /gituserconf.sh && /gituserconf.sh
+
 RUN apt-get update && apt-get install -y \
     htop \
     && rm -rf /var/lib/apt/lists/*
-
-RUN chmod +x /gituserconf.sh && /gituserconf.sh
-
-#adding git config script to the top of entrypoint script
-#RUN sed -i '5s/^/\/gituserconf.sh\&\n\n/' /usr/local/bin/start-singleuser.sh
 
 USER $NB_UID
