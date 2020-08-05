@@ -22,6 +22,8 @@ RUN chmod +x /gituserconf.sh && /gituserconf.sh
 
 RUN apt-get update && apt-get install -y \
     htop \
+    iputils-ping \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
