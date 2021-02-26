@@ -17,7 +17,7 @@ RUN conda install --yes --freeze-installed \
 COPY gituserconf.sh /gituserconf.sh
 
 COPY dockerrun.sh /dockerrun.sh 
-RUN chmod +x /usr/local/bin/dockerrun.sh 
+RUN chmod +x /dockerrun.sh 
 
 USER root
 
