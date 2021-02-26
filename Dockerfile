@@ -16,6 +16,9 @@ RUN conda install --yes --freeze-installed \
     
 COPY gituserconf.sh /gituserconf.sh
 
+COPY dockerrun.sh /dockerrun.sh 
+RUN chmod +x /usr/local/bin/dockerrun.sh 
+
 USER root
 
 RUN chmod +x /gituserconf.sh && /gituserconf.sh
@@ -27,3 +30,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
+
+CMD ["dockerrun.sh"]
+
