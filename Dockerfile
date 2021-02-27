@@ -32,5 +32,5 @@ RUN apt-get update && apt-get install -y \
 
 USER $NB_UID
 
-CMD ["dockerrun.sh"]
+CMD ["/dockerrun.sh"]
 
