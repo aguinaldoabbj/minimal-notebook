@@ -18,8 +18,8 @@ COPY gituserconf.sh /gituserconf.sh
 
 USER root
 
-COPY dockerrun.sh /dockerrun.sh 
-RUN chmod +x /dockerrun.sh 
+#COPY dockerrun.sh /dockerrun.sh 
+#RUN chmod +x /dockerrun.sh 
 
 RUN chmod +x /gituserconf.sh && /gituserconf.sh
 
@@ -32,5 +32,7 @@ RUN apt-get update && apt-get install -y \
 
 USER $NB_UID
 
-CMD ["/dockerrun.sh"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+#CMD ["/dockerrun.sh"]
 
